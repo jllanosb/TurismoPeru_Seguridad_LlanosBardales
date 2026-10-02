@@ -127,3 +127,291 @@ Los procedimientos correspondientes se encuentran en:
 Antes de ejecutar los scripts se debe verificar:
 
 * Ruta de origen.
+* Ruta de destino.
+* Permisos de lectura/escritura.
+* Existencia de la base de datos.
+* Compatibilidad de las estructuras de datos.
+
+### 5.4 Configuración de backups
+
+Los archivos correspondientes a las copias de seguridad se encuentran en:
+
+```text
+03_Backup/
+```
+
+Se debe verificar previamente:
+
+* Directorio de almacenamiento.
+* Permisos de escritura.
+* Espacio disponible.
+* Nombre de la base de datos.
+* Fecha y tipo de backup.
+
+### 5.5 Configuración de reportes
+
+Los componentes relacionados con los reportes se encuentran en:
+
+```text
+05_Reportes/
+```
+
+La configuración debe contemplar la conexión con la fuente de datos y la actualización de los datos utilizados por los reportes.
+
+---
+
+## 6. Estructura del proyecto
+
+La estructura principal del repositorio es la siguiente:
+
+```text
+TurismoPeru_Seguridad_LlanosBardales/
+│
+├── 01_Usuarios_Roles/
+│   └── Scripts relacionados con usuarios y roles
+│
+├── 02_Exportacion_Importacion/
+│   └── Scripts de exportación e importación
+│
+├── 03_Backup/
+│   └── Procedimientos y archivos relacionados con backups
+│
+├── 05_Reportes/
+│   └── Reportes y componentes de visualización
+│
+├── 06_Evidencias/
+│   └── Capturas y evidencias de ejecución
+│
+└── README.md
+```
+
+La organización observada directamente en GitHub incluye estas cinco carpetas principales y el archivo `README.md`.
+
+---
+
+## 7. Scripts disponibles
+
+Los scripts están organizados de acuerdo con la función que desempeñan dentro del proyecto.
+
+### 7.1 Usuarios y roles
+
+Ubicación:
+
+```text
+01_Usuarios_Roles/
+```
+
+Incluye los scripts destinados a:
+
+* Crear usuarios.
+* Crear roles.
+* Asignar permisos.
+* Revocar permisos.
+* Administrar el acceso a los objetos de la base de datos.
+* Comprobar los privilegios asignados.
+
+### 7.2 Exportación e importación
+
+Ubicación:
+
+```text
+02_Exportacion_Importacion/
+```
+
+Incluye procedimientos para:
+
+* Exportar información.
+* Importar información.
+* Transferir datos.
+* Verificar la recuperación de los datos.
+
+### 7.3 Backup
+
+Ubicación:
+
+```text
+03_Backup/
+```
+
+Incluye procedimientos relacionados con:
+
+* Creación de copias de seguridad.
+* Gestión de archivos de backup.
+* Recuperación de información.
+
+### 7.4 Reportes
+
+Ubicación:
+
+```text
+05_Reportes/
+```
+
+Incluye los recursos necesarios para la generación y visualización de reportes.
+
+---
+
+## 8. Procedimiento de restauración
+
+La restauración debe realizarse utilizando una cuenta con privilegios suficientes.
+
+### Procedimiento general
+
+1. Detener las operaciones que puedan modificar la base de datos.
+2. Verificar la disponibilidad del archivo de backup.
+3. Comprobar la integridad y ubicación del archivo.
+4. Identificar la base de datos de destino.
+5. Ejecutar el procedimiento de restauración correspondiente.
+6. Verificar que la restauración haya finalizado correctamente.
+7. Comprobar la existencia de las tablas.
+8. Validar la información restaurada.
+9. Comprobar los usuarios, roles y permisos.
+10. Ejecutar consultas de validación.
+11. Verificar finalmente los reportes.
+
+### Validación posterior
+
+Después de restaurar la base de datos se recomienda comprobar:
+
+```text
+Base de datos
+    ↓
+Tablas
+    ↓
+Datos
+    ↓
+Relaciones
+    ↓
+Usuarios
+    ↓
+Roles
+    ↓
+Permisos
+    ↓
+Reportes
+```
+
+> El procedimiento concreto de restauración debe ejecutarse según el motor de base de datos y el tipo de backup utilizado por los scripts del directorio `03_Backup/`.
+
+---
+
+## 9. Configuración del reporte
+
+Los recursos asociados a los reportes se encuentran en:
+
+```text
+05_Reportes/
+```
+
+El procedimiento general consiste en:
+
+### Paso 1. Abrir el reporte
+
+Abrir el archivo de reporte utilizando la herramienta correspondiente.
+
+### Paso 2. Configurar la conexión
+
+Configurar la conexión hacia la base de datos restaurada.
+
+Verificar:
+
+* Servidor.
+* Instancia.
+* Base de datos.
+* Usuario.
+* Método de autenticación.
+
+### Paso 3. Actualizar los datos
+
+Ejecutar la actualización del modelo de datos.
+
+```text
+Actualizar / Refresh
+        ↓
+Conectar con la base de datos
+        ↓
+Obtener información
+        ↓
+Procesar modelo
+        ↓
+Actualizar visualizaciones
+```
+
+### Paso 4. Validar información
+
+Comprobar que los indicadores, tablas y gráficos presenten información consistente con la base de datos.
+
+---
+
+## 10. Capturas de pantalla
+
+Las evidencias del desarrollo se encuentran en:
+
+```text
+06_Evidencias/
+```
+
+Esta sección documenta visualmente la ejecución de los procedimientos desarrollados en el proyecto.
+
+Se recomienda organizar las evidencias de acuerdo con las siguientes categorías:
+
+### Administración de usuarios y roles
+
+Capturas correspondientes a:
+
+* Creación de usuarios.
+* Creación de roles.
+* Asignación de permisos.
+* Verificación de permisos.
+
+### Exportación e importación
+
+Capturas correspondientes a:
+
+* Exportación de datos.
+* Importación de datos.
+* Validación de los datos importados.
+
+### Backup y restauración
+
+Capturas correspondientes a:
+
+* Creación del backup.
+* Archivo generado.
+* Proceso de restauración.
+* Validación posterior a la restauración.
+
+### Reportes
+
+Capturas correspondientes a:
+
+* Conexión con la base de datos.
+* Modelo de datos.
+* Indicadores.
+* Gráficos.
+* Reporte final.
+
+---
+
+## 11. Autor
+
+**Dr. Ing. Jaime Llanos Bardales**
+
+Docente Investigador
+Ingeniería de Sistemas
+
+GitHub:
+
+[jllanosb](https://github.com/jllanosb?utm_source=chatgpt.com)
+
+---
+
+## Licencia
+
+Este repositorio se encuentra destinado a fines académicos, educativos y de investigación.
+
+---
+
+## Referencia del repositorio
+
+[TurismoPeru_Seguridad_LlanosBardales](https://github.com/jllanosb/TurismoPeru_Seguridad_LlanosBardales?utm_source=chatgpt.com)
