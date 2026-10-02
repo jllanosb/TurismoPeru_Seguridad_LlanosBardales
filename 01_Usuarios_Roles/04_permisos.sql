@@ -57,3 +57,10 @@ DENY INSERT, UPDATE, DELETE ON JLLB.PAQUETE TO ROL_ANALISTA;
 GO
 GRANT SELECT ON JLLB.LUGAR_TURISTICO TO ROL_ANALISTA;
 GO
+
+--Asignar ROL
+ALTER ROLE rol_vendedor add member
+jllb_vendedor;
+
+ALTER ROLE rol_vendedor add member
+jllb_vendedor;
